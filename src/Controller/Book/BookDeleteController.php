@@ -17,7 +17,7 @@ use Symfony\Component\Security\Http\Attribute\IsGranted;
 class BookDeleteController extends AbstractController
 {
 
-    #[Route('/{id}', name: 'app_book_delete', methods: ['POST'])]
+    #[Route('/{id}', name: 'app_book_delete', methods: ['DELETE'])]
     public function __invoke(Request $request, Book $book, EntityManagerInterface $entityManager): Response
     {
         if ($this->isCsrfTokenValid('delete'.$book->getId(), $request->getPayload()->get('_token'))) {
